@@ -1,0 +1,45 @@
+# Eclipse project files
+.project
+.classpath
+.settings/
+/.metadata/
+.factorypath
+*.launch
+
+# Compiled output
+bin/
+target/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Java class files
+*.class
+
+
+
+# Gradle
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Environment files
+.env
+
+.metadata/
