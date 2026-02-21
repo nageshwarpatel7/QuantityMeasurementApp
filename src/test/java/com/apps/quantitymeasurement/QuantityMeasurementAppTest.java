@@ -118,4 +118,121 @@ public class QuantityMeasurementAppTest {
     	Length len2 = new Length(feet*12,LengthUnit.INCHES);
     	Assertions.assertTrue(len1.compare(len2));
     }
+    
+    @Test 
+    public void testEquality_YardToYard_SameValue() {
+    	Length l1 = new Length(1, LengthUnit.YARDS);
+    	Length l2 = new Length(2, LengthUnit.YARDS);
+    	Assertions.assertFalse(l1.equals(l2));
+    }
+    
+    @Test 
+    public void testEquality_YardToYard_DifferentValue() {
+    	Length l1 = new Length(1, LengthUnit.YARDS);
+    	Length l2 = new Length(2, LengthUnit.YARDS);
+    	Assertions.assertFalse(l1.equals(l2));
+    }
+    
+    @Test 
+    public void testEquality_YardToFeet_EquivalentValue() {
+    	Length l1 = new Length(1,LengthUnit.YARDS);
+    	Length l2 = new Length(3, LengthUnit.FEET);
+    	Assertions.assertTrue(l1.equals(l2));
+    }
+    
+    @Test
+    public void testEquality_FeetToYard_EquivalentValue() {
+    	Length l1 = new Length(1,LengthUnit.YARDS);
+    	Length l2 = new Length(3, LengthUnit.FEET);
+    	Assertions.assertTrue(l2.equals(l1));
+    }
+    
+    @Test 
+    public void testEquality_YardToInches_EquivalentValue() {
+    	Length l1 = new Length(1, LengthUnit.YARDS);
+    	Length l2 = new Length(36, LengthUnit.INCHES);
+    	Assertions.assertTrue(l1.equals(l2));
+    }
+    
+    @Test
+    public void testEquality_InchesToYard_EquivalentValue() {
+    	Length l1 = new Length(36, LengthUnit.INCHES);
+    	Length l2 = new Length(1, LengthUnit.YARDS);
+    	Assertions.assertTrue(l1.equals(l2));
+    }
+    
+    @Test
+    public void testEquality_YardToFeet_NonEquivalentValue() {
+    	Length l1 = new Length(1, LengthUnit.YARDS);
+    	Length l2 = new Length(2, LengthUnit.FEET);
+    	Assertions.assertFalse(l1.equals(l2));
+    }
+    
+    @Test 
+    public void testEquality_centimetersToInches_EquivalentValue() {
+    	Length l1 = new Length(1, LengthUnit.CENTIMETERS);
+    	Length l2 = new Length(0.393701, LengthUnit.INCHES);
+    	Assertions.assertTrue(l1.equals(l2));
+    }
+    
+    @Test
+    public void testEquality_centimetersToFeet_NonEquivalentValue() {
+    	Length l1 = new Length(1, LengthUnit.CENTIMETERS);
+    	Length l2 = new Length(1, LengthUnit.FEET);
+    	Assertions.assertFalse(l1.equals(l2));
+    }
+    
+    @Test
+    public void testEquality_MultiUnit_TransitiveProperty() {
+    	Length l1 = new Length(1, LengthUnit.YARDS);
+    	Length l2 = new Length(3, LengthUnit.FEET);
+    	Length l3 = new Length(36, LengthUnit.INCHES);
+    	Assertions.assertTrue(l1.equals(l2));
+    	Assertions.assertTrue(l2.equals(l3));
+    	Assertions.assertTrue(l1.equals(l3));
+    }
+    
+    @Test
+    public void testEquality_YardWithNullUnit() {
+    	Length l1 = new Length(1, LengthUnit.YARDS);
+    	Assertions.assertFalse(l1.equals(null));
+    }
+    
+    @Test
+    public void testEquality_YardSameReference() {
+    	Length l1 = new Length(1, LengthUnit.YARDS);
+    	Assertions.assertTrue(l1.equals(l1));
+    }
+    
+    @Test
+    public void testEquality_YardNullComparison() {
+    	Length l1 = new Length(1, LengthUnit.YARDS);
+    	Assertions.assertFalse(l1.equals(null));
+    }
+    
+    @Test
+    public void testEquality_CentimetersWithNullUnit() {
+    	Length l1 = new Length(1, LengthUnit.CENTIMETERS);
+    	Assertions.assertFalse(l1.equals(null));
+    }
+    
+    @Test
+    public void testEquality_CentimetersSameReference() {
+    	Length l1 = new Length(1, LengthUnit.CENTIMETERS);
+    	Assertions.assertTrue(l1.equals(l1));
+    }
+    
+    @Test
+    public void testEquality_CentimetersNullComparison() {
+    	Length l1 = new Length(1, LengthUnit.CENTIMETERS);
+    	Assertions.assertFalse(l1.equals(null));
+    }
+    
+    @Test
+    public void testEquality_AllUnit_ComplexScenario() {
+    	Length len1 = new Length(2,LengthUnit.YARDS);
+    	Length len2 = new Length(6,LengthUnit.FEET);
+    	Length len3 = new Length(72,LengthUnit.INCHES);
+    	Assertions.assertTrue(len1.equals(len2)&&len1.equals(len3));
+    }
 }
