@@ -1,8 +1,13 @@
 package com.apps.quantitymeasurement;
 
 import com.apps.quantitymeasurement.QuantityMeasurementApp.*;
+import com.apps.quantitymeasurement.Length;
+import com.apps.quantitymeasurement.Length.LengthUnit;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class QuantityMeasurementAppTest {
 
@@ -70,5 +75,47 @@ public class QuantityMeasurementAppTest {
     	Inches inches1 = new Inches(1.0);
         Object obj = new Object();
         Assertions.assertNotEquals(inches1, obj);
+    }
+    @Test
+    public void testFeetEquality() {
+    	Length len1 = new Length(2,LengthUnit.FEET);
+    	Length len2 = new Length(2,LengthUnit.FEET);
+    	Assertions.assertTrue(len1.equals(len2));
+    }
+    
+    @Test
+    public void testIncheEquality() {
+    	Length len1 = new Length(2,LengthUnit.INCHES);
+    	Length len2 = new Length(2,LengthUnit.INCHES);
+    	Assertions.assertTrue(len1.equals(len2));
+    }
+    
+    @Test
+    public void testFeetIncheComparision() {
+    	Length len1 = new Length(2,LengthUnit.FEET);
+    	Length len2 = new Length(24,LengthUnit.INCHES);
+    	Assertions.assertTrue(len1.compare(len2));
+    }
+    
+    @Test
+    public void testFeetInEquality() {
+    	Length len1 = new Length(2,LengthUnit.FEET);
+    	Length len2 = new Length(24,LengthUnit.FEET);
+    	Assertions.assertTrue(!len1.equals(len2));
+    }
+    
+    @Test
+    public void testIncheInEquality() {
+    	Length len1 = new Length(2,LengthUnit.INCHES);
+    	Length len2 = new Length(24,LengthUnit.INCHES);
+    	Assertions.assertTrue(!len1.equals(len2));
+    }
+   
+    @ParameterizedTest
+    @ValueSource(doubles= {1,4,5,6,5})
+    public void multipleFeetcomparison(double feet) {
+    	Length len1 = new Length(feet,LengthUnit.FEET);
+    	Length len2 = new Length(feet*12,LengthUnit.INCHES);
+    	Assertions.assertTrue(len1.compare(len2));
     }
 }
