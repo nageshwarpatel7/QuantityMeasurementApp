@@ -26,11 +26,11 @@ main
       ├── feature/UC2-InchEquality
       ├── feature/UC3-GenericLength
       ├── feature/UC4-YardEquality
-      ├── feature/UC5-UnitConversoion
+      ├── feature/UC5-UnitConversion
       ├── feature/UC6-UnitAddition
       ├── feature/UC7-TargetUnitAddition
       ├── feature/UC8-StandaloneUnit
-      ├── feature/UC9-WeightMeasurement
+      ├── feature/UC9-WeightEquality
       ├── feature/UC10-GenericQuantity
       ├── feature/UC11-VolumeMeasurement
       ├── feature/UC12-SubtractionAndDivision
@@ -109,7 +109,7 @@ main
 
 ## 📅 20 Feb 2026  
 ### 🔹 UC5 – Unit-to-Unit Conversion  
-**Branch:** `feature/UC5-UnitConversoion`
+**Branch:** `feature/UC5-UnitConversion`
 
 ### 🎯 Objective
 - Convert one unit into another  
@@ -172,7 +172,7 @@ main
 
 ## 📅 21 Feb 2026  
 ### 🔹 UC9 – Weight Measurement  
-**Branch:** `feature/UC9-WeightMeasurement`
+**Branch:** `feature/UC9-WeightEquality`
 
 ### 🎯 Objective
 - Extend application to support Weight category  
