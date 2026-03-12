@@ -1,5 +1,10 @@
-package com.apps.quantitymeasurement;
+package com.apps.quantitymeasurement.quantity;
 import java.util.function.*;
+
+import com.apps.quantitymeasurement.unit.IMeasurable;
+import com.apps.quantitymeasurement.unit.LengthUnit;
+import com.apps.quantitymeasurement.unit.TemperatureUnit;
+import com.apps.quantitymeasurement.unit.WeightUnit;
 
 public class Quantity<U extends IMeasurable> {
 	private static final double EPSILON = 0.0001;

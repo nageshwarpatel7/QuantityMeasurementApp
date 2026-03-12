@@ -1,4 +1,4 @@
-package com.apps.quantitymeasurement;
+package com.apps.quantitymeasurement.unit;
 
 public enum WeightUnit implements IMeasurable {
 	KILOGRAM(1.0),
@@ -22,5 +22,20 @@ public enum WeightUnit implements IMeasurable {
 	}
 	public String getUnitName() {
 		return WeightUnit.this.name();
+	}
+	
+	@Override
+	public String getMeasurementType() {
+		return this.getClass().getSimpleName();
+	}
+	
+	@Override
+	public IMeasurable getUnitInstance(String unitName) {
+		for(WeightUnit unit: WeightUnit.values()) {
+			if(unit.getUnitName().equalsIgnoreCase(unitName)) {
+				return unit;
+			}
+		}
+		throw new IllegalArgumentException("Invalid length unit: "+unitName);
 	}
 }

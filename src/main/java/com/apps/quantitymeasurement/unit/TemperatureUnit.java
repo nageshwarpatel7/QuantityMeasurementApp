@@ -1,4 +1,4 @@
-package com.apps.quantitymeasurement;
+package com.apps.quantitymeasurement.unit;
 import java.util.function.Function;
 
 public enum TemperatureUnit implements IMeasurable {
@@ -31,5 +31,19 @@ public enum TemperatureUnit implements IMeasurable {
     
     @Override
     public String getUnitName() { return this.name(); }
+	@Override
+	public String getMeasurementType() {
+		// TODO Auto-generated method stub
+		return this.getClass().getSimpleName();
+	}
+	@Override
+	public IMeasurable getUnitInstance(String unitName) {
+		for(TemperatureUnit unit: TemperatureUnit.values()) {
+			if(unit.getUnitName().equalsIgnoreCase(unitName)) {
+				return unit;
+			}
+		}
+		throw new IllegalArgumentException("Invalid temperature unit: "+ unitName);
+	}
 	
 }
