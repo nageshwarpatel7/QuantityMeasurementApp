@@ -1,4 +1,4 @@
-package com.apps.quantitymeasurement.model;
+package com.apps.quantitymeasurement.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;

@@ -12,9 +12,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
 
-import com.apps.quantitymeasurement.model.QuantityDTO;
-import com.apps.quantitymeasurement.model.QuantityInputDTO;
-import com.apps.quantitymeasurement.model.QuantityMeasurementDTO;
+import com.apps.quantitymeasurement.dto.QuantityDTO;
+import com.apps.quantitymeasurement.dto.QuantityInputDTO;
+import com.apps.quantitymeasurement.dto.QuantityMeasurementDTO;
 import com.apps.quantitymeasurement.quantity.Quantity;
 
 import org.junit.jupiter.api.*;

@@ -1,4 +1,4 @@
-package com.apps.quantitymeasurement.model;
+package com.apps.quantitymeasurement.entity;
 
 public enum OperationType {
 	ADD,

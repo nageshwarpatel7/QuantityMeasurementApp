@@ -1,9 +1,9 @@
 package com.apps.quantitymeasurement.controller;
 
-import com.apps.quantitymeasurement.model.QuantityDTO;
-import com.apps.quantitymeasurement.model.OperationType;
-import com.apps.quantitymeasurement.model.QuantityMeasurementDTO;
-import com.apps.quantitymeasurement.model.QuantityInputDTO;
+import com.apps.quantitymeasurement.dto.QuantityDTO;
+import com.apps.quantitymeasurement.dto.QuantityInputDTO;
+import com.apps.quantitymeasurement.dto.QuantityMeasurementDTO;
+import com.apps.quantitymeasurement.entity.OperationType;
 import com.apps.quantitymeasurement.service.IQuantityMeasurementService;
 import com.apps.quantitymeasurement.service.QuantityMeasurementServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;

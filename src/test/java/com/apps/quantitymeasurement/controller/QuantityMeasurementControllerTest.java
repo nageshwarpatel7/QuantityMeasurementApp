@@ -3,9 +3,10 @@ package com.apps.quantitymeasurement.controller;
 import org.mockito.Mockito;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import com.apps.quantitymeasurement.model.QuantityDTO;
-import com.apps.quantitymeasurement.model.QuantityInputDTO;
-import com.apps.quantitymeasurement.model.QuantityMeasurementDTO;
+
+import com.apps.quantitymeasurement.dto.QuantityDTO;
+import com.apps.quantitymeasurement.dto.QuantityInputDTO;
+import com.apps.quantitymeasurement.dto.QuantityMeasurementDTO;
 import com.apps.quantitymeasurement.service. IQuantityMeasurementService;
 import org. springframework.beans. factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

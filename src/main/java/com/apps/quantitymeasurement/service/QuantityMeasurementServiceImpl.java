@@ -1,7 +1,9 @@
 package com.apps.quantitymeasurement.service;
 
+import com.apps.quantitymeasurement.dto.QuantityDTO;
+import com.apps.quantitymeasurement.dto.QuantityMeasurementDTO;
+import com.apps.quantitymeasurement.entity.*;
 import com.apps.quantitymeasurement.exception.*;
-import com.apps.quantitymeasurement.model.*;
 import com.apps.quantitymeasurement.repository.QuantityMeasurementRepository;
 import com.apps.quantitymeasurement.unit.*;
 import org.springframework.beans.factory.annotation.Autowired;
