@@ -177,5 +177,16 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+		<profiles>
+        <profile>
+            <id>production</id>
+            <properties>
+                <activatedProperties>prod</activatedProperties>
+            </properties>
+            <build>
+                <plugins>
+                    </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
