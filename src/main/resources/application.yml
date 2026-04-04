@@ -4,5 +4,8 @@ spring:
       client:
         registration:
           google:
-            client-id: ${GOOGLE_CLIENT_ID:none}
-            client-secret: ${GOOGLE_CLIENT_SECRET:none}
+            client-id: ${GOOGLE_CLIENT_ID:none}      # Added 'none'
+            client-secret: ${GOOGLE_CLIENT_SECRET:none} # Added 'none'
+            scope:
+              - email
+              - profile
